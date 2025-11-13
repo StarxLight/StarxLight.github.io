@@ -18,12 +18,12 @@ const CatCard = ({ cat, onSwipe }: any) => {
         onSwipedLeft: () => {
             setIsExiting(true);
             setOffset(-1000);
-            setTimeout(() => onSwipe("Left"), 1000); // Wait for animation
+            setTimeout(() => onSwipe("Left"), 200); // Wait for animation
         },
         onSwipedRight: () => {
             setIsExiting(true);
             setOffset(1000);
-            setTimeout(() => onSwipe("Right"), 1000); // Wait for animation
+            setTimeout(() => onSwipe("Right"), 200); // Wait for animation
         },
         onSwiped: () => {
             if (Math.abs(offset) < 100 && !isExiting) {
@@ -43,7 +43,7 @@ const CatCard = ({ cat, onSwipe }: any) => {
             className="bg-white rounded-2xl shadow-lg overflow-hidden w-80 h-96 flex items-center justify-center cursor-grab active:cursor-grabbing relative"
             style={{
                 transform: `translateX(${offset}px) rotate(${rotation}deg)`,
-                transition: isSwiping && !isExiting ? "none" : "transform 0.3s ease-out, opacity 0.3s ease-out",
+                transition: isSwiping && !isExiting ? "none" : "",
                 opacity: isExiting ? 0 : Math.max(0.5, 1 - Math.abs(offset) / 500),
             }}
         >
