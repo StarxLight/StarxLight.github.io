@@ -53,7 +53,6 @@ const CatCard = ({ cat, onSwipe }: any) => {
                 className="w-full h-full object-cover rounded-2xl select-none pointer-events-none"
             />
 
-            {/* Visual feedback */}
             {offset > 50 && !isExiting && (
                 <div className="absolute top-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg font-bold text-2xl">
                     LIKE 💚
